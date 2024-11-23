@@ -1,0 +1,15 @@
+# version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password # Change this to a strong password
+      MYSQL_DATABASE: your_database # Optional: Name of the database to create
+      MYSQL_USER: your_user # Optional: Non-root user for the database
+      MYSQL_PASSWORD: your_password # Optional: Password for the non-root user
+    volumes:
+      - ./.data/mariadb:/var/lib/mysql
